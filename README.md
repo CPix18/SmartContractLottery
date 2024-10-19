@@ -1,5 +1,66 @@
 # Foundry Smart Contract Lottery
 
+# Probably Random Raffle Contracts
+
+## About
+
+1. This code is to create a provably random lottery
+
+
+## What we want it to do?
+
+1. Users can pay for a ticket
+  1. The ticket fees are going to go to the winner 
+2. After some amount of time, the lottery will auto pick a winner
+  1. Programatically
+  2. Use Chainlink VRF (Randomness) & Chainlink Automation (Time-Based Trigger)
+
+## Learning to create NatSpec Section in contract (Goes above contract, below pragma)
+
+## Error handling
+1. doesn't make sense to use require any more bc of gas
+2. use revert
+
+1. name error messages right under contract declaration
+   1. error Raffle__NotEnoughEthSent as an example (Two underscores after contract name then error)
+
+## Create Chainlink VRF Subscription
+
+https://vrf.chain.link/sepolia/new
+
+1. Connect Wallet and approve transaction
+
+## State Variables 
+1. cheaper to make all upper case (goes right under error message or contract name)
+
+/**
+ * @title Sample Raffle Contract
+ * @author UEVGUY
+ * @notice creating a sample raffle
+ * @dev Using Chainlink VRFv2
+ */
+
+
+## Modulo function is goofy
+
+1. It works more like take the first set of numbers and see what is left over 2334502 % 10 is just the 2 at the end bc it's what is left over
+
+## CEI: Checks Effects and Interactions
+1. do checks (require if--> error) early in function (more gas efficient)
+2. do effect after checks
+3. interactions with other contracts come later
+   1. events come before interactions
+
+## You can make reverts with numerous variables in them
+1. error My__Error(uint256 someVariable, uint256 anotherVariable);
+2. revert My_Error(address(this.balance), anotherVariable.length);
+
+# Tests
+
+## Deploy Scripts
+1. 
+
+
 This is a section from the Cyfrin Foundry Solidity Course.
 
 Huge shout out to Patrick Collins for making all this!
@@ -7,6 +68,18 @@ Huge shout out to Patrick Collins for making all this!
 *[⭐️ (3:04:09) | Lesson 9: Foundry Smart Contract Lottery](https://www.youtube.com/watch?v=sas02qSFZ74&t=11049s)*
 
 - [Foundry Smart Contract Lottery](#foundry-smart-contract-lottery)
+- [Probably Random Raffle Contracts](#probably-random-raffle-contracts)
+  - [About](#about)
+  - [What we want it to do?](#what-we-want-it-to-do)
+  - [Learning to create NatSpec Section in contract (Goes above contract, below pragma)](#learning-to-create-natspec-section-in-contract-goes-above-contract-below-pragma)
+  - [Error handling](#error-handling)
+  - [Create Chainlink VRF Subscription](#create-chainlink-vrf-subscription)
+  - [State Variables](#state-variables)
+  - [Modulo function is goofy](#modulo-function-is-goofy)
+  - [CEI: Checks Effects and Interactions](#cei-checks-effects-and-interactions)
+  - [You can make reverts with numerous variables in them](#you-can-make-reverts-with-numerous-variables-in-them)
+- [Tests](#tests)
+  - [Deploy Scripts](#deploy-scripts)
 - [Getting Started](#getting-started)
   - [Requirements](#requirements)
   - [Quickstart](#quickstart)
