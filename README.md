@@ -1,10 +1,8 @@
 # Foundry Smart Contract Lottery
 
-# Probably Random Raffle Contracts
+## Personal notes
 
-## About
-
-1. This code is to create a provably random lottery
+1. This code creates a provably random lottery using Chainlink VRF and Automation
 
 
 ## What we want it to do?
@@ -29,17 +27,20 @@
 https://vrf.chain.link/sepolia/new
 
 1. Connect Wallet and approve transaction
+2. Get test LINK and ETH
+3. Create Subscription using Metamask
+4. Fund Subscription
+
+## Create Chainlink Automation Account
+
+https://automation.chain.link/
+
+1. Register New Upkeep
+2. Use custom logic
+3. Fill in blanks
 
 ## State Variables 
 1. cheaper to make all upper case (goes right under error message or contract name)
-
-/**
- * @title Sample Raffle Contract
- * @author UEVGUY
- * @notice creating a sample raffle
- * @dev Using Chainlink VRFv2
- */
-
 
 ## Modulo function is goofy
 
@@ -55,11 +56,7 @@ https://vrf.chain.link/sepolia/new
 1. error My__Error(uint256 someVariable, uint256 anotherVariable);
 2. revert My_Error(address(this.balance), anotherVariable.length);
 
-# Tests
-
-## Deploy Scripts
-1. 
-
+## Cyfrin ReadMe
 
 This is a section from the Cyfrin Foundry Solidity Course.
 
@@ -68,18 +65,17 @@ Huge shout out to Patrick Collins for making all this!
 *[⭐️ (3:04:09) | Lesson 9: Foundry Smart Contract Lottery](https://www.youtube.com/watch?v=sas02qSFZ74&t=11049s)*
 
 - [Foundry Smart Contract Lottery](#foundry-smart-contract-lottery)
-- [Probably Random Raffle Contracts](#probably-random-raffle-contracts)
-  - [About](#about)
+  - [Personal notes](#personal-notes)
   - [What we want it to do?](#what-we-want-it-to-do)
   - [Learning to create NatSpec Section in contract (Goes above contract, below pragma)](#learning-to-create-natspec-section-in-contract-goes-above-contract-below-pragma)
   - [Error handling](#error-handling)
   - [Create Chainlink VRF Subscription](#create-chainlink-vrf-subscription)
+  - [Create Chainlink Automation Account](#create-chainlink-automation-account)
   - [State Variables](#state-variables)
   - [Modulo function is goofy](#modulo-function-is-goofy)
   - [CEI: Checks Effects and Interactions](#cei-checks-effects-and-interactions)
   - [You can make reverts with numerous variables in them](#you-can-make-reverts-with-numerous-variables-in-them)
-- [Tests](#tests)
-  - [Deploy Scripts](#deploy-scripts)
+  - [Cyfrin ReadMe](#cyfrin-readme)
 - [Getting Started](#getting-started)
   - [Requirements](#requirements)
   - [Quickstart](#quickstart)
