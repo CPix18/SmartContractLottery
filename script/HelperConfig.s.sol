@@ -87,7 +87,7 @@ contract HelperConfig is CodeConstants, Script {
         returns (NetworkConfig memory sepoliaNetworkConfig)
     {
         sepoliaNetworkConfig = NetworkConfig({
-            subscriptionId: 4244416522498249141814610753008696399081896929023878836802545309793195337341, // Replace with your subId from the Chainlink VRF UI here
+            subscriptionId: 0, // Replace with your subId from the Chainlink VRF UI here
             gasLane: 0x787d74caea10b2b357790d5b5247c2f63d1d91572a9846f780606e4d953677ae,
             automationUpdateInterval: 604800, // 1 week
             raffleEntranceFee: 0.01 ether,
