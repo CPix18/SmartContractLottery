@@ -3,7 +3,7 @@
 ## Personal notes
 
 1. This code creates a provably random lottery using Chainlink VRF and Automation
-
+2. Huge shout out to Patrick Collins for making all this!
 
 ## What we want it to do?
 
@@ -18,9 +18,18 @@
 ## Error handling
 1. doesn't make sense to use require any more bc of gas
 2. use revert
+3. Created custom gas efficient errors, 1 that takes multiple parameters
+   2. error My__Error(uint256 someVariable, uint256 anotherVariable);
+   3. revert My_Error(address(this.balance), anotherVariable.length);
 
-1. name error messages right under contract declaration
+3. name error messages right under contract declaration
    1. error Raffle__NotEnoughEthSent as an example (Two underscores after contract name then error)
+
+## Enums
+1. An enum (short for "enumeration") is a user-defined data type that consists of a set of named values, called elements or members, representing distinct constants. It is used to define variables that can only hold one of the predefined values, improving code readability and reducing errors.
+
+## Constructor and HelperConfig script
+1. Raffle.sol has a robust constructor ready to go for any chain deployment, simply add a new config function in HelperConfig
 
 ## Create Chainlink VRF Subscription
 
@@ -40,7 +49,7 @@ https://automation.chain.link/
 3. Fill in blanks
 
 ## State Variables 
-1. cheaper to make all upper case (goes right under error message or contract name)
+1. cheaper to make all upper case (goes right under error message or contract name), add getter functions
 
 ## Modulo function is goofy
 
@@ -52,15 +61,18 @@ https://automation.chain.link/
 3. interactions with other contracts come later
    1. events come before interactions
 
-## You can make reverts with numerous variables in them
-1. error My__Error(uint256 someVariable, uint256 anotherVariable);
-2. revert My_Error(address(this.balance), anotherVariable.length);
+## Chainlink upKeep
+1. we don't have to call the pick winner function bc Chainlink nodes will do that using automation.
 
-## Cyfrin ReadMe
+## Script
+1. Designed to deploy the raffle.sol for any chain setup in the config file
+
+## Testing
+1. Assess, Act, Assert
+
+# Cyfrin ReadMe
 
 This is a section from the Cyfrin Foundry Solidity Course.
-
-Huge shout out to Patrick Collins for making all this!
 
 *[⭐️ (3:04:09) | Lesson 9: Foundry Smart Contract Lottery](https://www.youtube.com/watch?v=sas02qSFZ74&t=11049s)*
 
@@ -69,13 +81,17 @@ Huge shout out to Patrick Collins for making all this!
   - [What we want it to do?](#what-we-want-it-to-do)
   - [Learning to create NatSpec Section in contract (Goes above contract, below pragma)](#learning-to-create-natspec-section-in-contract-goes-above-contract-below-pragma)
   - [Error handling](#error-handling)
+  - [Enums](#enums)
+  - [Constructor and HelperConfig script](#constructor-and-helperconfig-script)
   - [Create Chainlink VRF Subscription](#create-chainlink-vrf-subscription)
   - [Create Chainlink Automation Account](#create-chainlink-automation-account)
   - [State Variables](#state-variables)
   - [Modulo function is goofy](#modulo-function-is-goofy)
   - [CEI: Checks Effects and Interactions](#cei-checks-effects-and-interactions)
-  - [You can make reverts with numerous variables in them](#you-can-make-reverts-with-numerous-variables-in-them)
-  - [Cyfrin ReadMe](#cyfrin-readme)
+  - [Chainlink upKeep](#chainlink-upkeep)
+  - [Script](#script)
+  - [Testing](#testing)
+- [Cyfrin ReadMe](#cyfrin-readme)
 - [Getting Started](#getting-started)
   - [Requirements](#requirements)
   - [Quickstart](#quickstart)
@@ -84,7 +100,7 @@ Huge shout out to Patrick Collins for making all this!
   - [Library](#library)
   - [Deploy](#deploy)
   - [Deploy - Other Network](#deploy---other-network)
-  - [Testing](#testing)
+  - [Testing](#testing-1)
     - [Test Coverage](#test-coverage)
 - [Deployment to a testnet or mainnet](#deployment-to-a-testnet-or-mainnet)
   - [Scripts](#scripts)
