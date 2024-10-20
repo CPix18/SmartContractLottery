@@ -12,7 +12,7 @@ abstract contract CodeConstants {
     int256 public MOCK_WEI_PER_UINT_LINK = 4e15;
 
     address public FOUNDRY_DEFAULT_SENDER =
-        0x7132F9c2a50e40BeC4a54B3B373537239A044a16;
+         <0x00...>; // public address tied to private key used for deploying
 
     uint256 public constant ETH_SEPOLIA_CHAIN_ID = 11155111;
     uint256 public constant ETH_MAINNET_CHAIN_ID = 1;
