@@ -13,7 +13,7 @@ import {CodeConstants} from "./HelperConfig.s.sol";
 
 contract CreateSubscription is Script {
     address public FOUNDRY_DEFAULT_SENDER =
-        0x7132F9c2a50e40BeC4a54B3B373537239A044a16;
+        <0x00...>; // public address tied to private key used for deploying
 
     function createSubscriptionUsingConfig() public returns (uint256, address) {
         HelperConfig helperConfig = new HelperConfig();
