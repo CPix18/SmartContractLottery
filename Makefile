@@ -64,7 +64,7 @@ make fund-mainnet-subscription:
 	forge script script/Interactions.s.sol:FundSubscription --rpc-url $(MAINNET_RPC_URL) --private-key $(PRIVATE_KEY) --broadcast	
 
 make enter-sepolia-raffle:
-	cast send 0x3282332b209D5E109475C4B4FC5ac7760d45EF0F "enterRaffle()" --value 0.01ether --private-key $(PRIVATE_KEY) --rpc-url $(SEPOLIA_RPC_URL)
+	cast send <Contract-Address> "enterRaffle()" --value 0.01ether --private-key $(PRIVATE_KEY) --rpc-url $(SEPOLIA_RPC_URL)
 
 make enter-mainnet-raffle:
 	cast send <Contract-Address> "enterRaffle()" --value 0.01ether --private-key $(PRIVATE_KEY) --rpc-url $(MAINNET_RPC_URL)	
