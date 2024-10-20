@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery DApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.0/dist/ethers.umd.min.js"></script>
+    <script type="module" src="index.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Smart Lottery</h1>
+
+        <div class="button-container">
+            <button id="connectButton" class="btn">Connect Wallet</button>
+            <div id="walletAddress" class="response"></div>
+
+            <button id="enterLotteryButton" class="btn">Enter Lottery</button>
+            <div id="status" class="response">Status: Not Entered</div>
+
+            <button id="getWinnerButton" class="btn">Get Recent Winner</button>
+            <div id="winner" class="response">Winner: Not fetched</div>
+
+            <button id="balanceButton" class="btn">Get Lottery Balance</button>
+            <div id="balance" class="response">Balance: Not fetched</div>
+        </div>
+    </div>
+</body>
+
+</html>
